@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+canvas {
+    border:5px solid #0080FF;
+    background-color: #A9E2F3;
+}
+</style>
+</head>
+<body onload="startGame()"> 
+<script>
+
+var GameComponent;
+
+function startGame() {
+    GameArea.start();
+    GameComponent = new square(30, 30, "red", 10, 120); 
+}
+
+var GameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() { 
+        this.canvas.width = 480;
+        this.canvas.height = 270;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]); 
+    }
+}
+
+function square(width, height, color, x, y) { 
+    this.width = width;
+    this.height = height;
+    this.x = x;
+    this.y = y;    
+    ctx = GameArea.context;
+    ctx.fillStyle = color;
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+}
+
+</script>
+
+<p>liiguta kastikest nooltega</p>
+
+</body>
+</html>
