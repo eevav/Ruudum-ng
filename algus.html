@@ -48,11 +48,16 @@ function square(width, height, color, x, y) {
 function updateGameArea() {
 	GameArea.clear();
 	GameComponent.x += 1;
+	GameComponent.y += 2;
 	GameComponent.update();
 }
 	
 
 </script>
 <p>liiguta kastikest nooltega</p>
+<button onclick="moveup()">ÜLES</button>
+<button onclick="movedown()">ALLA</button>
+<button onclick="moveleft()">VASAKULE</button>
+<button onclick="moveright()">PAREMALE</button>
 </body>
 </html>
