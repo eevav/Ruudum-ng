@@ -13,10 +13,11 @@ canvas {
 <script>
 
 var GameComponent;
+var LabWalls= new component(10, 200, "black", 300, 120);
 
 function startGame() {
+    GameComponent = new component(30, 30, "red", 10, 120);
     GameArea.start();
-    GameComponent = new square(30, 30, "red", 10, 120); 
 }
 
 var GameArea = {
@@ -33,7 +34,7 @@ var GameArea = {
 	}
 }
 
-function square(width, height, color, x, y) { 
+function component(width, height, color, x, y) { 
     this.width = width;
     this.height = height;
 	this.speedX = 0;
@@ -53,6 +54,7 @@ function square(width, height, color, x, y) {
 
 function updateGameArea() {
 	GameArea.clear();
+	LabWall.update();
 	GameComponent.position();
 	GameComponent.update();
 }
