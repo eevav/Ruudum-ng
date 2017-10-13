@@ -72,12 +72,16 @@ function left() {
 function right() {
 	GameComponent.speedX += 1;
 }
+function stop() {
+    GameComponent.speedX = 0;
+    GameComponent.speedY = 0; 
+}
 
 </script>
 <p>liiguta kastikest nooltega</p>
-<button onclick="up()">ÜLES</button>
-<button onclick="down()">ALLA</button>
-<button onclick="left()">VASAKULE</button>
-<button onclick="right()">PAREMALE</button>
+<button onmousedown="up()" onmouseup="stop()">ÜLES</button>
+<button onmousedown="down()"onmouseup="stop()">ALLA</button>
+<button onmousedown="left()"onmouseup="stop()">VASAKULE</button>
+<button onmousedown="right()"onmouseup="stop()">PAREMALE</button>
 </body>
 </html>
