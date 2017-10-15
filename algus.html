@@ -13,10 +13,11 @@ canvas {
 <script>
 
 var GameComponent;
-var LabWalls= new component(10, 200, "black", 300, 120);
+var MazeWall;
 
 function startGame() {
     GameComponent = new component(30, 30, "red", 10, 120);
+	MazeWall = new component(10, 200, "black", 300, 120); 
     GameArea.start();
 }
 
@@ -54,7 +55,7 @@ function component(width, height, color, x, y) {
 
 function updateGameArea() {
 	GameArea.clear();
-	LabWall.update();
+	MazeWall.update();
 	GameComponent.position();
 	GameComponent.update();
 }
