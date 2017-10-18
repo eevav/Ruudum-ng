@@ -16,7 +16,7 @@ var GameComponent;
 var MazeWall;
 
 function startGame() {
-    GameComponent = new component(30, 30, "green", 10, 120);
+    GameComponent = new component(30, 30, "green", 10, 220);
 	MazeWall = new component(10, 200, "black", 300, 120); 
     GameArea.start();
 }
@@ -79,6 +79,7 @@ function updateGameArea() {
 		GameArea.stop();
 	} else {
 		GameArea.clear();
+		MazeWall.x += -1;
 		MazeWall.update();
 		GameComponent.position();
 		GameComponent.update();
@@ -106,7 +107,7 @@ function stop() {
 }
 
 </script>
-<p>liiguta kastikest nooltega</p>
+<p>Liiguta kastikest nuppudega, joone vastu minek lõpetab mängu</p>
 <button onmousedown="up()" onmouseup="stop()">ÜLES</button>
 <button onmousedown="down()"onmouseup="stop()">ALLA</button>
 <button onmousedown="left()"onmouseup="stop()">VASAKULE</button>
